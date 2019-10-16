@@ -1,8 +1,12 @@
 package com.example.myapplication.mvp.presenter.personal;
 
 
+import android.util.Log;
+
 import com.example.myapplication.constant.SpConstant;
 import com.example.myapplication.mvp.contract.PersonalContract;
+import com.example.myapplication.mvp.model.bean.DataResponse;
+import com.example.myapplication.mvp.model.bean.Rank;
 import com.example.myapplication.mvp.model.bean.User;
 import com.example.myapplication.mvp.model.personal.PersonalModel;
 import com.example.myapplication.ui.activity.CollectionActivity;
@@ -12,12 +16,14 @@ import com.example.myapplication.ui.activity.ToDoActivity;
 import com.example.mylibrary.util.AppUtils;
 import com.example.mylibrary.util.SpUtils;
 
+import io.reactivex.functions.Consumer;
+
 /**
  * Created by Administrator on 2018/11/29 0029.
  */
 
 public class PersonalPresenter extends PersonalContract.PersonalPresenter {
-
+    public static final String TAG = "哇哈哈, PersonalPresenter";
 
     public static PersonalPresenter newInstance() {
 
@@ -86,5 +92,21 @@ public class PersonalPresenter extends PersonalContract.PersonalPresenter {
     @Override
     public void openToDoActivity() {
         mIView.startNewActivity(ToDoActivity.class);
+    }
+
+    @Override
+    public void getUserCoin() {
+        mIModel.getRank().subscribe(new Consumer<Rank>() {
+            @Override
+            public void accept(Rank rank) throws Exception {
+                Log.i(TAG, "accept: ");
+                mIView.showUserCoin(rank.getData().getCoinCount());
+            }
+        }, new Consumer<Throwable>() {
+            @Override
+            public void accept(Throwable throwable) throws Exception {
+                Log.i(TAG, "accept: " + throwable.getMessage());
+            }
+        });
     }
 }

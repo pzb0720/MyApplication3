@@ -1,12 +1,12 @@
 package com.example.myapplication.api;
 
 
-
 import com.example.myapplication.mvp.model.bean.Article;
 import com.example.myapplication.mvp.model.bean.Collection;
 import com.example.myapplication.mvp.model.bean.DataResponse;
 import com.example.myapplication.mvp.model.bean.Friend;
 import com.example.myapplication.mvp.model.bean.Navi;
+import com.example.myapplication.mvp.model.bean.Rank;
 import com.example.myapplication.mvp.model.bean.ToDo;
 import com.example.myapplication.mvp.model.bean.TopArticle;
 import com.example.myapplication.mvp.model.bean.Tree;
@@ -30,28 +30,28 @@ import retrofit2.http.Query;
  */
 
 public interface wanAndroid {
-    public static final String HOST_URL = "https://www.wanandroid.com/";
+    public static final String HOST_URL = "https://www.wanandroid.com";
 
-    @GET("banner/json")
+    @GET("/banner/json")
     Observable<WanBanner> getBanner();
 
-    @GET("article/top/json")
+    @GET("/article/top/json")
     Observable<TopArticle> getTop();
 
     @GET("/article/list/{page}/json")
     Observable<DataResponse<Article>> getArticle(@Path("page") int page);
 
 
-    @GET("tree/json")
+    @GET("/tree/json")
     Observable<DataResponse<List<Tree>>> getTree();
 
 
     //http://www.wanandroid.com/navi/json
-    @GET("navi/json")
+    @GET("/navi/json")
     Observable<DataResponse<List<Navi>>> getNavigation();
 
 
-    @GET("article/list/{currentPage}/json")
+    @GET("/article/list/{currentPage}/json")
     Observable<DataResponse<Article>> getTreeArticle(@Path("currentPage") int page, @Query("cid") int cid);
 
 
@@ -105,7 +105,7 @@ public interface wanAndroid {
      * @param id id
      * @return Deferred<DataResponse>
      */
-    @POST("lg/uncollect_originId/{id}/json")
+    @POST("/lg/uncollect_originId/{id}/json")
     Observable<DataResponse<Article>> removeCollectArticle(@Path("id") int id);
 
     //89054
@@ -136,7 +136,7 @@ public interface wanAndroid {
     Observable<ToDo> getTodoData(@Path("page") int page);
 
 
-    @POST("lg/todo/delete/{id}/json")
+    @POST("/lg/todo/delete/{id}/json")
     Observable<DataResponse> deleteTo(@Path("id") int id);
 
     /**
@@ -148,7 +148,7 @@ public interface wanAndroid {
      * @return BaseModel
      */
 
-    @POST("lg/todo/done/{id}/json")
+    @POST("/lg/todo/done/{id}/json")
     Observable<DataResponse> updateTodoJustStatus(@Path("id") int id, @Query("status") int status);
 
 
@@ -162,7 +162,7 @@ public interface wanAndroid {
      * @return BaseBean
      */
     @FormUrlEncoded
-    @POST("lg/todo/add/json")
+    @POST("/lg/todo/add/json")
     Observable<DataResponse> toAddToDo(@FieldMap Map<String, Object> map);
 
     /**
@@ -178,20 +178,20 @@ public interface wanAndroid {
      * @return BaseModel
      */
     @FormUrlEncoded
-    @POST("lg/todo/update/{id}/json")
+    @POST("/lg/todo/update/{id}/json")
     Observable<DataResponse> updateTodo(@Path("id") int id, @FieldMap Map<String, Object> map);
 
 
-    @POST("lg/todo/update/83/json")
+    @POST("/lg/todo/update/83/json")
     Observable<DataResponse> updateToDoItem(int id, int status);
 
     //
 //
-    @GET(" friend/json")
+    @GET("/friend/json")
     Observable<DataResponse<List<Friend>>> getFriends();
 
 
-    @GET(" hotkey/json")
+    @GET("/hotkey/json")
     Observable<DataResponse<List<Friend>>> getHotKey();
 
 
@@ -224,4 +224,10 @@ public interface wanAndroid {
 //
 //    @GET("/lg/coin/userinfo/json")
 //    Observable<DataResponse<UserCoin>> getUserCoin();
+
+//    https://www.wanandroid.com/lg/coin/userinfo/json
+
+    //    Observable<DataResponse<Rank>> getUserCoin();
+    @GET("/lg/coin/userinfo/json")
+    Observable<Rank> getuserCoin();
 }

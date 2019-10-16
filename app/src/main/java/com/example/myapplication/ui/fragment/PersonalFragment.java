@@ -46,6 +46,11 @@ public class PersonalFragment extends BaseMVPFragment<PersonalContract.PersonalP
     @BindView(R.id.llLogout)
     LinearLayout mLlLogout;
 
+    @BindView(R.id.ll_current_coin)
+    LinearLayout mLlCurrentCoin;
+    @BindView(R.id.tv_current_coin)
+    TextView mTvCurrentCoin;
+
     boolean isLogin = false;
 
     public static PersonalFragment newInstance() {
@@ -80,7 +85,7 @@ public class PersonalFragment extends BaseMVPFragment<PersonalContract.PersonalP
         mLlLogout.setOnClickListener(this);
         mTvSetting.setOnClickListener(this);
         mTvMyBookmark.setOnClickListener(this);
-
+        mLlCurrentCoin.setOnClickListener(this);
     }
 
     @Override
@@ -103,6 +108,7 @@ public class PersonalFragment extends BaseMVPFragment<PersonalContract.PersonalP
             mTvNick.setText(userName);
             isLogin = true;
 //        RxBus.get().send().
+            mPresenter.getUserCoin();
             mLlLogout.setVisibility(View.VISIBLE);
         } else {
             isLogin = false;
@@ -148,6 +154,9 @@ public class PersonalFragment extends BaseMVPFragment<PersonalContract.PersonalP
                     mPresenter.checkLogin();
                 }
                 break;
+            case R.id.ll_current_coin:
+
+                break;
             case R.id.llLogout:
                 loginOut();
                 break;
@@ -192,5 +201,10 @@ public class PersonalFragment extends BaseMVPFragment<PersonalContract.PersonalP
     public void rxBusEvent() {
         Boolean isLogin = SpUtils.getBoolean(AppUtils.getContext(), SpConstant.SP_USER_LOGIN, false);
         updateLatest(isLogin);
+    }
+
+    @Override
+    public void showUserCoin(int coinCount) {
+        mTvCurrentCoin.setText(coinCount + "");
     }
 }
