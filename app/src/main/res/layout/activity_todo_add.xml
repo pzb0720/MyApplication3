@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            ></android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="true"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="标题"
+                android:textColor="@color/text_tip_color"
+                android:textSize="10dp" />
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/color_eee"
+                android:hint="请输入标题"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:padding="@dimen/dp_12"
+                android:textColor="@color/color_212121"
+                android:textColorHint="@color/grey"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="内容"
+                android:textColor="@color/text_tip_color"
+                android:textSize="10dp" />
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@color/color_eee"
+                android:gravity="start"
+                android:hint="请输入内容"
+                android:maxLength="100"
+                android:minLines="4"
+                android:padding="@dimen/dp_12"
+                android:textColor="@color/color_212121"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="预定完成时间"
+                android:textColor="@color/text_tip_color"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@color/color_eee"
+                android:drawableLeft="@mipmap/icon_calendar"
+                android:drawablePadding="@dimen/dp_12"
+                android:padding="@dimen/dp_12"
+                android:textColor="@color/color_212121"
+                android:textSize="15sp"
+                tools:text="2018-10-10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="优先级"
+                android:textColor="@color/text_tip_color"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tv_priority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_eee"
+                android:layout_marginTop="@dimen/dp_12"
+                android:maxLines="1"
+                android:padding="12dp"
+                android:text="@string/priority_first"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_todo_submit"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/button_shap"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+

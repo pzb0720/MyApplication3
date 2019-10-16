@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory android:title="@string/preference_basic_setting">
+
+        <CheckBoxPreference
+            android:icon="@drawable/ic_top"
+
+            android:key="@string/key_show_top_article"
+            android:summary="@string/preference_summary_show_top_article"
+            android:title="@string/preference_show_top_article" />
+
+        <Preference
+            android:icon="@drawable/ic_clean_cache"
+            android:key="@string/key_clean_cache"
+            android:summary="@string/preference_summary_clean_cache"
+            android:title="@string/preference_clean_cache" />
+        <Preference
+            android:key="@string/icon_color"
+            android:summary="@string/preference_summary_color"
+            android:title="@string/preference_clean_color" />
+        <Preference
+            android:icon="@drawable/ic_exit_login"
+            android:key="@string/key_exit"
+            android:summary="@string/preference_summary_exit"
+            android:title="@string/preference_exit" />
+    </PreferenceCategory>
+</PreferenceScreen>

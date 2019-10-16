@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_article_group"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_54"
+            android:background="@drawable/blue_gradient_bg"
+            android:theme="@style/AppTheme.Toolbar"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:navigationIcon="@mipmap/ic_arrow_back_white"
+            app:titleTextColor="@color/white"></android.support.v7.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/fl_article_detail_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:transitionName="@string/share_view"></FrameLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

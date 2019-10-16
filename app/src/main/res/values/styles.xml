@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="BaseAppThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/md_blue_500</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+
+
+    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
+
+    <style name="AppTheme.ToolbarPopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="overlapAnchor">false</item>
+    </style>
+
+    <style name="TextAppearance.ExpandedTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+
+    <style name="line_view">
+
+        <item name="android:layout_height">2px</item>
+        <item name="android:background">@color/alpha_10_black</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="tv_operating_style">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawableRight">@mipmap/ic_right</item>
+        <item name="android:padding">@dimen/dp_10</item>
+    </style>
+
+
+    <style name="style_float_btn">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|end</item>
+    </style>
+
+    <style name="dialog_priority" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+
+</resources>

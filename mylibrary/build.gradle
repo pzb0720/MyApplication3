@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["recyclerview"]
+    api rootProject.ext.dependencies["constraintLayout"]
+    api rootProject.ext.dependencies["design"]
+    api rootProject.ext.dependencies["support-v4"]
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //network
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["retrofitGsonConvert"]
+    api rootProject.ext.dependencies["retrofitRxjava2Adapter"]
+
+    //rxjava2
+    api rootProject.ext.dependencies["rxava2"]
+    api rootProject.ext.dependencies["rxAndroid"]
+
+    //dagger+黄油刀
+    api rootProject.ext.dependencies["dagger2"]
+    annotationProcessor rootProject.ext.dependencies["dagger2Compiler"]
+    api rootProject.ext.dependencies["butterKnife"]
+
+    //数据库
+    api rootProject.ext.dependencies["litePal"]
+
+    //fragmentation
+    api rootProject.ext.dependencies["fragmentation"]
+
+    //ui
+    api rootProject.ext.dependencies["banner"]
+    api rootProject.ext.dependencies["gilde"]
+    annotationProcessor rootProject.ext.dependencies["gildeCompiler"]
+    api rootProject.ext.dependencies["baseAdapter"]
+    api rootProject.ext.dependencies["smartrefresh"]
+    api rootProject.ext.dependencies["smartrefreshHeader"]
+
+
+    api 'jp.wasabeef:glide-transformations:3.0.1'
+
+    //Logger
+    api "com.orhanobut:logger:1.15"
+}
