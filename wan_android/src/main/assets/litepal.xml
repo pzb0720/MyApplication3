@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="wan_android" />
+    <version value="1" />
+    <list>
+        <mapping class="com.example.wanandroid.mvp.model.bean.HistorySearch" />
+    </list>
+</litepal>
