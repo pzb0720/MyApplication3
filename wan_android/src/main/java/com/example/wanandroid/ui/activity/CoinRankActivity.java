@@ -83,6 +83,7 @@ public class CoinRankActivity extends BaseMVPActivity<UserCoinContract.UserCoinP
         mAdapter = new CoinRankAdapter(R.layout.item_coin_rank, list);
 
         mRecyclerView.setAdapter(mAdapter);
+
     }
 
     @Override

@@ -86,8 +86,8 @@ public class PersonalFragment extends BaseMVPFragment<PersonalContract.PersonalP
         mCivAvatar.setOnClickListener(this);
         mTvMyCollection.setOnClickListener(this);
         mLlLogout.setOnClickListener(this);
-        mTvSetting.setOnClickListener(this);
-        mTvMyBookmark.setOnClickListener(this);
+//        mTvSetting.setOnClickListener(this);
+//        mTvMyBookmark.setOnClickListener(this);
         mLlCurrentCoin.setOnClickListener(this);
     }
 
